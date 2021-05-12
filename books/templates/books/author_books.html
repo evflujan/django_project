@@ -1,0 +1,18 @@
+<h2>Lista de Libros publicados por {{author.name}}</h2>
+
+{% if author_books %}
+
+    <ul>
+    {% for book in author_books %}
+        <li><a href="/books/book/{{ book.id }}">{{ book.title }} ({{book.pub_year}})</a></li>
+        <br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No books are available.</p>
+{% endif %}
+<br>
+<a href="/books/author/{{ author.id }}">Volver a la página del autor</a>
+<br>
+<br>
+<a href="/books">Volver al menú inicial de la aplicación Books</a>
