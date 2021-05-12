@@ -1,0 +1,28 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "books_author" (
+	"id"	integer NOT NULL,
+	"name"	varchar(50) NOT NULL,
+	"country"	varchar(50) NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS "books_book" (
+	"id"	integer NOT NULL,
+	"title"	varchar(100) NOT NULL,
+	"author_id"	bigint NOT NULL,
+	"pub_year"	integer NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("author_id") REFERENCES "books_author"("id") DEFERRABLE INITIALLY DEFERRED
+);
+INSERT INTO "books_author" ("id","name","country") VALUES (1,'Miguel de Cervantes Saavedra','Spain'),
+ (3,'William Shakespeare','England'),
+ (4,'Dante Allighieri','Italy'),
+ (5,'Voltaire','France'),
+ (6,'Walt Whitman','USA');
+INSERT INTO "books_book" ("id","title","author_id","pub_year") VALUES (1,'Don Quijote de La Mancha',1,1492),
+ (2,'Othello',3,1603),
+ (3,'La Divina Comedia',4,1304),
+ (4,'El enfermo imaginario',5,1673);
+CREATE INDEX IF NOT EXISTS "books_book_author_id_8b91747b" ON "books_book" (
+	"author_id"
+);
+COMMIT;
