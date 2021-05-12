@@ -5,38 +5,38 @@ from .models import Author, Book
 # Create your views here.
 
 def index(request):
-  template = loader.get_template('books/index.html')
+  template = 'books/index.html'
   context = {}
-  return HttpResponse(template.render(context, request))
+  return render(request, template, context)
 
 def books(request):
+  template = 'books/books.html'
   book_list = Book.objects.order_by('title')
-  template = loader.get_template('books/books.html')
   context = { 'book_list': book_list }
-  return HttpResponse(template.render(context, request))
+  return render(request, template, context)
 
 def book(request, book_id):
+  template = 'books/book.html'
   book = Book.objects.get(pk=book_id)
   author = Author.objects.get(pk=book.author_id)
-  template = loader.get_template('books/book.html')
   context = {'book': book, 'author': author}
-  return HttpResponse(template.render(context, request))
+  return render(request, template, context)
 
 def authors(request):
+  template = 'books/authors.html'
   author_list = Author.objects.order_by('name')
-  template = loader.get_template('books/authors.html')
   context = { 'author_list': author_list }
-  return HttpResponse(template.render(context, request))
+  return render(request, template, context)
 
 def author(request, author_id ):
+  template = 'books/author.html'
   author = Author.objects.get(pk=author_id)
-  template = loader.get_template('books/author.html')
   context = { 'author': author }
-  return HttpResponse(template.render(context, request))
+  return render(request, template, context)
 
 def author_books(request, author_id):
+  template = 'books/author_books.html'
   author = Author.objects.get(pk=author_id)
   author_books = Book.objects.filter(author=author_id)
-  template = loader.get_template('books/author_books.html')
   context = {'author_books': author_books, 'author': author}
-  return HttpResponse(template.render(context, request))
+  return render(request, template, context)
