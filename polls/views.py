@@ -7,6 +7,8 @@ from django.shortcuts import render, get_object_or_404
 
 from .models import Question
 
+def owner(request):
+    return HttpResponse("Hello, world. 77d186b2 is the polls index.")
 
 def index(request):
     template = 'polls/index.html'
