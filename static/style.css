@@ -1,0 +1,12 @@
+body{
+  border-style: solid;
+  border-color: blue;
+  border-width: 3px;
+}
+.header{
+  border-style: solid;
+  border-color: yellow;
+  border-width: 3px;
+  background-color: blue;
+  color: yellow;
+}
