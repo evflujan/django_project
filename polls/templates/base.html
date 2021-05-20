@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/polls/style.css">
+    <title>{% block title %}Coursera LOCALHOST{% endblock %}</title>
+</head>
+
+<body>
+    <div id="header">
+        {% block header %}
+        <h1>HEADER</h1>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}
+        <h1>Content:</h1>
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+        <h2>FOOTER                       It is {% now "jS F Y H:i" %}</h2>
+        {% endblock %}
+    </div>
+</body>
+</html>
