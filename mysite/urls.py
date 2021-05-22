@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include('books.urls')),
     path('polls/', include('polls.urls')),
+    path('gview/', include('gview.urls')),
 ]

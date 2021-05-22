@@ -22,4 +22,3 @@ urlpatterns = [
     path('car/<int:pk>', views.CarDetailView.as_view(), name='car'),
     path('wacky', views.WackyEquinesView.as_view(), name='whatever'),
 ]
-
