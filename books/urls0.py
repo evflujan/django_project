@@ -9,13 +9,13 @@ urlpatterns = [
     # ex: /
     path('', views.index, name='index'),
     # ex: /books/
-    path('books/', views.BookListView.as_view(), name='books'),
+    path('books/', views.books, name='books'),
     # ex: /book/<id>/
-    path('book/<int:pk>', views.BookDetailView.as_view(), name='book'),
+    path('book/<int:book_id>', views.book, name='book'),
     # ex: /authors/
-    path('authors/', views.AuthorListView.as_view(), name='authors'),
+    path('authors/', views.authors, name='authors'),
     # ex: /author/<id>/
-    path('author/<int:pk>', views.AuthorDetailView.as_view(), name='author'),
+    path('author/<int:author_id>', views.author, name='author'),
     # ex: /author/<id>/books/
     path('author/<int:author_id>/books/', views.author_books, name='author_books'),
 ]
