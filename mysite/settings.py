@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [ "*" ]
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
     'httprequest.apps.HttprequestConfig',
     'books.apps.BooksConfig',
     'polls.apps.PollsConfig',
