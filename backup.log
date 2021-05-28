@@ -1,0 +1,10 @@
+#1621419004 Disk /dev/sdb - 240 GB / 223 GiB - CHS 29185 255 63
+ 1 : start=     2048, size=  1048576, Id=00, P
+ 2 : start=  1050624, size=204800000, Id=00, P
+ 3 : start=205850624, size=234375168, Id=00, P
+ 4 : start=440225792, size= 28635136, Id=00, P
+#1621430015 Disk /dev/sdb - 240 GB / 223 GiB - CHS 29185 255 63
+ 1 : start=     2048, size=  1048576, Id=00, P
+ 2 : start=  1050624, size=204800000, Id=00, P
+ 3 : start=205850624, size=234375168, Id=00, P
+ 4 : start=440225792, size= 28635136, Id=00, P
