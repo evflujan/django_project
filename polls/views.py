@@ -8,7 +8,7 @@ from django.views import generic
 from .models import Question, Choice
 
 def owner(request):
-    return HttpResponse("Hello, world. 77d186b2 is the polls index.")
+    return HttpResponse("e001afac Hello, world. 77d186b2 is the polls index.")
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'

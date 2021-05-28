@@ -43,7 +43,10 @@ Cookie_value: {value}
     if count > 9:
         count  = 1
 
-    value = 'e001afac' + ' - ' + 'view count=' + str(count)
+    if count > 3:
+        value = 'e001afac'
+    else:
+        value = 'e001afac' + ' - ' + 'view count=' + str(count)
 
     cookie_name = 'dj4e_cookie'
 
