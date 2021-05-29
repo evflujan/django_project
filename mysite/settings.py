@@ -31,8 +31,9 @@ ALLOWED_HOSTS = [ "*" ]
 # Application definition
 
 INSTALLED_APPS = [
+    'hello.apps.HelloConfig',
     'home.apps.HomeConfig',
-    'gview.apps.GviewConfig',
+    'httprequest.apps.HttprequestConfig',
     'books.apps.BooksConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
