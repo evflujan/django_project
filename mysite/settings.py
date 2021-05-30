@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [ "*" ]
 # Application definition
 
 INSTALLED_APPS = [
+    'authz.apps.AuthzConfig',
     'hello.apps.HelloConfig',
     'home.apps.HomeConfig',
     'httprequest.apps.HttprequestConfig',
