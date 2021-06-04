@@ -40,3 +40,8 @@ def author_books(request, author_id):
   author_books = Book.objects.filter(author=author_id)
   context = {'author_books': author_books, 'author': author}
   return render(request, template, context)
+
+def return_main(request):
+  template = 'books/return_main.html'
+  context = {}
+  return render(request, template, context)
