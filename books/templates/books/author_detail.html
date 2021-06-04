@@ -1,4 +1,10 @@
+{% extends "books_base.html" %}
+
+{% block header %}
 <h2>Datos del Autor</h2>
+{% endblock %}
+
+{% block content %}
 
 <p>author.id = {{author.id}}</p>
 
@@ -12,3 +18,5 @@
 <br>
 <a href="/books">Volver al menú inicial de la aplicación Books</a>
 <br>
+
+{% endblock %}

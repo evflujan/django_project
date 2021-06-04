@@ -1,4 +1,10 @@
+{% extends "books_base.html" %}
+
+{% block header %}
 <h2>Lista de Libros</h2>
+{% endblock %}
+
+{% block content %}
 
 {% if book_list %}
 
@@ -11,3 +17,5 @@
 {% else %}
     <p>No books are available.</p>
 {% endif %}
+
+{% endblock %}

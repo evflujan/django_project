@@ -1,4 +1,11 @@
+{% extends "books_base.html" %}
+
+{% block header %}
 <h2>Lista de Autores</h2>
+{% endblock %}
+
+
+{% block content %}
 
 {% if author_list %}
 
@@ -11,3 +18,5 @@
 {% else %}
     <p>No authors are available.</p>
 {% endif %}
+
+{% endblock %}

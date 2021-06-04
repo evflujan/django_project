@@ -29,11 +29,17 @@ body{
   color: blue;
   padding-left: 10px;
   margin: 10px;
+  height: 60px;
+}
+.now{
+    color: green;
+    margin: 10px;
+    float: right;
 }
 .main_link{
-    border: 3px solid green;
+    border: 3px solid blue;
     padding: auto;
     margin: 10px;
     float: right;
-    color: green;
+    color: blue;
 }

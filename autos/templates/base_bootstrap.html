@@ -40,7 +40,12 @@
 
 </head>
 <body>
+    <div id="header">
+        {% block header %} {% endblock %}
+    </div>
+
 <div class="container">
+
 {% block navbar %} {% endblock %}
 {% block welcome %} {% endblock %}
 {% block messages %}
@@ -52,9 +57,18 @@
     {% endfor %}
     {% endif %}
 {% endblock %}
-{% block content %}
-{% endblock %}
+    <div id="content">
+        {% block content %}
+        <h1>Content:</h1>
+        {% endblock %}
+    </div>
 </div>
-{% block footer %} {% endblock %}
+
+    <div id="footer">
+        {% block footer %}
+
+        {% endblock %}
+    </div>
+
 </body>
 </html>
