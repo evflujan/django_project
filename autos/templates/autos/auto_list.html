@@ -7,9 +7,9 @@
     {% for auto in auto_list %}
       <li>
           {{ auto.nickname }} ({{ auto.make }})
-          (<a href="{% url 'autos:auto_update' auto.id %}">Update</a> |
-          <a href="{% url 'autos:auto_delete' auto.id %}">Delete</a>) <br/>
           {{ auto.comments }} ({{ auto.mileage }} miles)
+          (<a href="{% url 'autos:auto_update' auto.id %}">Update</a> |
+          <a href="{% url 'autos:auto_delete' auto.id %}">Delete</a>)
       </li>
     {% endfor %}
   </ul>
@@ -24,7 +24,7 @@
     {% endif %}
   </p>
   <p>
-  <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make_count }}) | 
+  <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make_count }}) |
     <a href="{% url 'autos:make_create' %}">Add a make</a>
   </p>
 {% endblock %}

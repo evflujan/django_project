@@ -25,5 +25,7 @@ urlpatterns = [
     path('owner/', include('polls.urls')),
     path('data/', include('httprequest.urls')),
     path('hello/', include('hello.urls')),
+    path('form/', include('form.urls')),
+    path('autos/', include('autos.urls')),
     path('', TemplateView.as_view(template_name='home/main.html')),
 ]
