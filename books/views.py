@@ -10,26 +10,26 @@ def index(request):
   return render(request, template, context)
 
 def books(request):
-  template = 'books/books.html'
+  template = 'books/book_list.html'
   book_list = Book.objects.order_by('title')
   context = { 'book_list': book_list }
   return render(request, template, context)
 
 def book(request, book_id):
-  template = 'books/book.html'
+  template = 'books/book_detail.html'
   book = Book.objects.get(pk=book_id)
   author = Author.objects.get(pk=book.author_id)
   context = {'book': book, 'author': author}
   return render(request, template, context)
 
 def authors(request):
-  template = 'books/authors.html'
+  template = 'books/author_list.html'
   author_list = Author.objects.order_by('name')
   context = { 'author_list': author_list }
   return render(request, template, context)
 
 def author(request, author_id ):
-  template = 'books/author.html'
+  template = 'books/author_detail.html'
   author = Author.objects.get(pk=author_id)
   context = { 'author': author }
   return render(request, template, context)
