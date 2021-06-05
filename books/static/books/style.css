@@ -10,6 +10,10 @@ body{
   padding-left: 10px;
   margin: 10px;
 }
+.container{
+    width: 95%;
+}
+
 #content{
   border-style: solid;
   border-color: green;
@@ -29,7 +33,7 @@ body{
   color: blue;
   padding-left: 10px;
   margin: 10px;
-  height: 60px;
+  height: 40px;
 }
 .now{
     color: green;
@@ -39,7 +43,6 @@ body{
 .main_link{
     border: 3px solid blue;
     padding: auto;
-    margin: 10px;
     float: right;
     color: blue;
 }
