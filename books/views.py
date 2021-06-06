@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.template import loader
 from .models import Author, Book
-from .forms import BookForm
+from .forms import BookForm, AuthorForm
 # Create your views here.
 
 def index(request):
@@ -39,7 +39,7 @@ class BookCreate(LoginRequiredMixin, View):
         return render(request, self.template, context)
 
     def post(self, request):
-        form = BookForm(request,POST)
+        form = BookForm(request.POST)
         if not form.is_valid():
             context = {'form': form}
             return render(request, self.template, context)
@@ -106,7 +106,7 @@ class AuthorCreate(LoginRequiredMixin, View):
         return render(request, self.template, context)
 
     def post(self, request):
-        form = AuthorForm(request,POST)
+        form = AuthorForm(request.POST)
         if not form.is_valid():
             context = {'form': form}
             return render(request, self.template, context)
