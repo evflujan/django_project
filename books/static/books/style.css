@@ -15,9 +15,7 @@ body{
 }
 
 #content{
-  border-style: solid;
-  border-color: green;
-  border-width: 3px;
+  border: 3px solid green;
   background-color: lightgrey;
   color: blue;
   padding-left: 20px;
@@ -25,21 +23,30 @@ body{
   padding-bottom: 20px;
   margin: 10px;
 }
+
+.add_link{
+    float: right;
+}
+
+.line{
+    width: 80%;
+}
+
 #footer{
-  border-style: solid;
-  border-color: blue;
-  border-width: 3px;
+  border: 3px solid blue;
   background-color: lightyellow;
   color: blue;
   padding-left: 10px;
   margin: 10px;
   height: 40px;
 }
+
 .now{
     color: green;
     margin: 10px;
     float: right;
 }
+
 .main_link{
     border: 3px solid blue;
     padding: auto;

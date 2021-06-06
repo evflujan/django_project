@@ -1,7 +1,7 @@
 {% extends "books_base.html" %}
 
 {% block header %}
-<h2>Lista de Autores</h2>
+<h2>Author List</h2>
 {% endblock %}
 
 
@@ -11,12 +11,25 @@
 
     <ul>
     {% for author in author_list %}
-        <li><a href="{% url 'books:author' author.id %}">{{ author.name }} ({{author.country}})</a></li>
-        <br>
+    <li><a href="{% url 'books:author' author.id %}">{{ author.name }} ({{author.country}})</a>
+        <span>
+            <i class="bi-pencil-square" style="font-size: 3rem; color: green;"></i>
+            <a href="{% url 'books:author_update' author.id %}">Update</a>
+        </span>
+        <span>
+            <i class="bi-trash" style="font-size: 3rem; color: red;"></i>
+            <a href="{% url 'books:author_delete'  author.id %}">Delete</a>
+        </span>
+    </li>
+    <br>
     {% endfor %}
     </ul>
 {% else %}
     <p>No authors are available.</p>
 {% endif %}
+    <span class="add_link">
+        <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:author_create' %}"> Add a new Author  </a>
+    </span>
 
 {% endblock %}
