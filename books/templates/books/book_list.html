@@ -1,7 +1,8 @@
 {% extends "books_base.html" %}
 
 {% block header %}
-<h2>Book List </h2>
+<h2 class="pagename">Book List</h2>
+<h2 class="appname">App Books</h2>
 {% endblock %}
 
 {% block content %}
@@ -11,6 +12,9 @@
     <span class="add_link">
         <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
         <a href="{% url 'books:book_create' %}"> Add a new Book  </a>
+        <br>
+        <i class="bi-house" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:index' %}"> Home Page</a>
     </span>
 
     {% for book in book_list %}
@@ -18,8 +22,6 @@
             <span>
                 <i class="bi-pencil-square" style="font-size: 3rem; color: green;"></i>
                 <a href="{% url 'books:book_update' book.id %}">Update</a>
-            </span>
-            <span>
                 <i class="bi-trash" style="font-size: 3rem; color: red;"></i>
                 <a href="{% url 'books:book_delete'  book.id %}">Delete</a>
             </span>

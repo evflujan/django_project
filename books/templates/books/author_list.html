@@ -1,7 +1,8 @@
 {% extends "books_base.html" %}
 
 {% block header %}
-<h2>Author List</h2>
+<h2 class="pagename">Author List</h2>
+<h2 class="appname">App Books</h2>
 {% endblock %}
 
 
@@ -11,16 +12,19 @@
     <span class="add_link">
         <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
         <a href="{% url 'books:author_create' %}"> Add a new Author  </a>
+        <br>
+        <i class="bi-house" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:index' %}"> Home Page</a>
     </span>
 
     <ul>
     {% for author in author_list %}
     <li><a href="{% url 'books:author' author.id %}">{{ author.name }} ({{author.country}})</a>
         <span>
+            <i class="bi-book" style="font-size: 3rem; color: green;"></i>
+            <a href="{% url 'books:author_books' author.id %}">Books</a>
             <i class="bi-pencil-square" style="font-size: 3rem; color: green;"></i>
             <a href="{% url 'books:author_update' author.id %}">Update</a>
-        </span>
-        <span>
             <i class="bi-trash" style="font-size: 3rem; color: red;"></i>
             <a href="{% url 'books:author_delete'  author.id %}">Delete</a>
         </span>

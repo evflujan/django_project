@@ -1,11 +1,21 @@
 {% extends "books_base.html" %}
 
 {% block header %}
-    <h2>Author Form</h2>
+<h2 class="pagename">Author Form</h2>
+<h2 class="appname">App Books</h2>
 {% endblock %}
 
 
 {% block content %}
+    <span class="add_link">
+        <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:book_create' %}"> Add a new book</a>
+        <br>
+        <i class="bi-house" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:index' %}"> Home Page</a>
+
+    </span>
+
     <form action="" method="post">
         {% csrf_token %}
         <table>

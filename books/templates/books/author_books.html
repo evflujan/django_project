@@ -4,23 +4,33 @@
 <h2>Lista de Libros publicados por {{author.name}}</h2>
 {% endblock %}
 
-
 {% block content %}
 
 {% if author_books %}
+    <span class="add_link">
+        <i class="bi-arrow-left" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:authors' %}"> Return to Author Book List</a>
+        <br>
+        <i class="bi-house" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:index' %}"> Home Page</a>
+    </span>
 
     <ul>
     {% for book in author_books %}
-        <li><a href="/books/book/{{ book.id }}">{{ book.title }} ({{book.pub_year}})</a></li>
-        <br>
+        <li><a href="/books/book/{{ book.id }}">{{ book.title }} ({{book.pub_year}})</a>
+        <span>
+            <i class="bi-pencil-square" style="font-size: 3rem; color: green;"></i>
+            <a href="{% url 'books:book_update' book.id %}">Update</a>
+            <i class="bi-trash" style="font-size: 3rem; color: red;"></i>
+            <a href="{% url 'books:book_delete'  book.id %}">Delete</a>
+        </span>
+
+        </li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No books are available.</p>
 {% endif %}
 <br>
-<a href="/books/author/{{ author.id }}">Volver a la página del autor</a>
 <br>
-<br>
-<a href="/books">Volver al menú inicial de la aplicación Books</a>
 {% endblock %}

@@ -1,25 +1,29 @@
 {% extends "books_base.html" %}
 
 {% block header %}
-<h1>App: Books</h1>
+<h2 class="pagename">Home Page</h2>
+<h2 class="appname">App Books</h2>
 {% endblock %}
 
 {% block content %}
+    <br>
+    <span class="add_link">
+        <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:book_create' %}"> Add a new book  </a>
+    </span>
 
   <ul>
     <li class="line"><a href="/books/books">List of Books</a>
-        <span>
-            <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
-            <a href="{% url 'books:book_create' %}"> Add a new book  </a>
-        </span>
     </li>
     <br>
     <li class="line"><a href="/books/authors">List of Authors</a>
-        <span>
-            <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
-            <a href="{% url 'books:author_create' %}"> Add a new author  </a>
-        </span>
     </li>
   </ul>
+
+    <span class="add_link_2">
+        <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:author_create' %}"> Add a new author  </a>
+    </span>
+    <br>
 
 {% endblock %}

@@ -1,14 +1,18 @@
 {% extends "books_base.html" %}
 
-{% block content %}
+{% block header %}
+<h2 class="pagename">Book Confirm Delete</h2>
+<h2 class="appname">App Books</h2>
+{% endblock %}
 
-<h1>Book Delete</h1>
+{% block content %}
 
 <p>Are you sure you want to delete the book: {{ book }}?</p>
 
 <form action="" method="POST">
   {% csrf_token %}
   <input type="submit" value="Yes, delete.">
+  <input type="submit" onclick="window.location='{% url 'books:books' %}' ; return false;" value="Cancel">
 </form>
 
 {% endblock %}

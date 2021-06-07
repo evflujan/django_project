@@ -1,14 +1,27 @@
 body{
-
+    border: 1px solid black;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 #header{
   border: 3px solid yellow;
   background-color: lightblue;
   color: yellow;
   padding-left: 10px;
-  margin: auto;
-  height: 50px;
-  vertical-align: middle;
+  height: 60px;
+  margin: 5px;
+}
+#header h2{
+    margin-top: 12px;
+}
+.appname{
+    float: left;
+}
+.pagename{
+    float: right;
+    padding-right: 10px;
+    margin-right: 10px;
 }
 .container{
     width: 98%;
@@ -27,7 +40,12 @@ body{
 
 .add_link{
     float: right;
-    margin-right: 20px;
+    margin-right: 10px;
+}
+
+.add_link_2{
+    float: right;
+    margin-right: 5px;
 }
 
 .line{
@@ -51,7 +69,8 @@ body{
 
 .main_link{
     border: 3px solid blue;
-    padding: auto;
     float: right;
     color: blue;
+    padding: 3px;
+    margin: 3px;
 }
