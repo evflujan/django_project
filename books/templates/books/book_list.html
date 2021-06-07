@@ -8,6 +8,11 @@
 
 {% if book_list %}
     <ul>
+    <span class="add_link">
+        <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:book_create' %}"> Add a new Book  </a>
+    </span>
+
     {% for book in book_list %}
         <li><a href="{% url 'books:book' book.id %}">{{ book.title }} ({{book.pub_year}})</a>
             <span>
@@ -26,9 +31,5 @@
 {% else %}
     <p>No books are available.</p>
 {% endif %}
-    <span class="add_link">
-        <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
-        <a href="{% url 'books:book_create' %}"> Add a new Book  </a>
-    </span>
 
 {% endblock %}

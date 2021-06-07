@@ -8,6 +8,10 @@
 {% block content %}
 
 {% if author_list %}
+    <span class="add_link">
+        <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
+        <a href="{% url 'books:author_create' %}"> Add a new Author  </a>
+    </span>
 
     <ul>
     {% for author in author_list %}
@@ -27,9 +31,5 @@
 {% else %}
     <p>No authors are available.</p>
 {% endif %}
-    <span class="add_link">
-        <i class="bi-plus-square" style="font-size: 3rem; color: cornflowerblue;"></i>
-        <a href="{% url 'books:author_create' %}"> Add a new Author  </a>
-    </span>
 
 {% endblock %}
