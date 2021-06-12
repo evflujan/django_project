@@ -1,0 +1,37 @@
+{% extends "base_menu.html" %}
+{% load humanize %} <!-- https://docs.djangoproject.com/en/3.0/ref/contrib/humanize -->
+{% block content %}
+<h1>Ads</h1>
+<p>
+{% if ad_list %}
+<ul>
+  {% for ad in ad_list %}
+    <li>
+        <a href="{% url 'ads:ad_detail'  ad.id %}">{{ ad }}</a>
+
+        <span style="float: right;">
+        ({{ ad.updated_at|naturaltime }})
+        {% if ad.owner == user %}
+        <span> ___ </span>
+        <a href="{% url 'ads:ad_update' ad.id %}"><i class="fa fa-pencil"></i></a>
+        <span> ___ </span>
+        <a href="{% url 'ads:ad_delete' ad.id %}"><i class="fa fa-trash"></i></a>
+        {% endif %}
+        </span>
+
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>There are no ads in the database.</p>
+{% endif %}
+</p>
+<p>
+<a href="{% url 'ads:ad_create' %}">Add an Ad</a> |
+{% if user.is_authenticated %}
+<a href="{% url 'logout' %}?next={% url 'ads:all' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}?next={% url 'ads:all' %}">Login</a>
+{% endif %}
+</p>
+{% endblock %}

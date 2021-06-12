@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [ "*" ]
 # Application definition
 
 INSTALLED_APPS = [
+    'ads.apps.AdsConfig',
     'cats.apps.CatsConfig',
     'autos.apps.AutosConfig',
     'form.apps.FormConfig',
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "~/django_project/static"
+STATIC_ROOT = "~/Coursera/Lab/django_project/static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
