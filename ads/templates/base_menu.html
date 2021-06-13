@@ -1,10 +1,11 @@
 {% extends "base_bootstrap.html" %}
 {% block navbar %}
+<span>user: {{user}}</span>
 
 <nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-        <a class="navbar-brand" href="/">{{ settings.APP_NAME }}</a>
+        <a class="navbar-brand" href="/">{{ settings.APP_NAME }} </a>
     </div>
     <!-- https://stackoverflow.com/questions/22047251/django-dynamically-get-view-url-and-check-if-its-the-current-page -->
     <ul class="nav navbar-nav">

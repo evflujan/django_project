@@ -4,12 +4,12 @@ from . import views
 app_name='ads'
 urlpatterns = [
     path('', views.AdListView.as_view(), name='all'),
-    path('<int:pk>/', views.AdDetailView.as_view(), name='ad_detail'),
-    path('create/',
+    path('ad/<int:pk>', views.AdDetailView.as_view(), name='ad_detail'),
+    path('ad/create',
         views.AdCreateView.as_view(success_url=reverse_lazy('ads:all')), name='ad_create'),
-    path('<int:pk>/update/',
+    path('ad/<int:pk>/update',
         views.AdUpdateView.as_view(success_url=reverse_lazy('ads:all')), name='ad_update'),
-    path('<int:pk>/delete/',
+    path('ad/<int:pk>/delete',
         views.AdDeleteView.as_view(success_url=reverse_lazy('ads:all')), name='ad_delete'),
 ]
 
