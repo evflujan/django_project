@@ -1,0 +1,46 @@
+{% extends "base_bootstrap.html" %}
+{% load humanize %} <!-- https://docs.djangoproject.com/en/3.0/ref/contrib/humanize -->
+{% block head %}
+<style>
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: none;
+  background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
+</style>
+{% endblock %}
+{% block content %}
+<p>detail.html</p>
+{% if img.content_type %}
+<div id="overlay" class="overlay" style="text-align: center;"
+   onclick="document.getElementById('overlay').style.display = 'none';" >
+
+</div>
+{% endif %}
+<span style="float: right;">
+({{ img.updated_at|naturaltime }})
+{% if img.owner == user %}
+<img src="media/{{ img.picture }}" class="img-responsive" style="width: 50px; margin-right: 50px;" />
+<a href="{% url 'imgs:img_update' img.id %}"><i class="fa fa-pencil"></i></a>
+<a href="{% url 'imgs:img_delete' img.id %}"><i class="fa fa-trash"></i></a>
+{% endif %}
+</span>
+<h1>{{ img.name }}</h1>
+<p>
+{{ img.desc }}
+</p>
+<p>
+{% if img.content_type %}
+<img style="float:right; max-width:50%;" src="{% url 'imgs:img_stream' img.id %}"
+    onclick="document.getElementById('overlay').style.display = 'block';">
+{% endif %}
+</p>
+<p>
+<a href="{% url 'imgs:all' %}">All imgs</a>
+</p>
+{% endblock %}

@@ -6,6 +6,9 @@
 <ul>
   {% for pic in pic_list %}
     <li>
+        <p>
+            <img width='30px' src="{% url 'pics:pic_picture' pic.id %}">
+        </p>
         <a href="{% url 'pics:pic_detail'  pic.id %}">{{ pic.title }}</a>
         {% if pic.owner == user %}
         (<a href="{% url 'pics:pic_update' pic.id %}">Edit</a> |

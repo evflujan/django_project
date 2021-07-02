@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [ "*" ]
 # Application definition
 
 INSTALLED_APPS = [
+    'albums',
+    'imgs.apps.ImgsConfig',
     'pics.apps.PicsConfig',
     'ads.apps.AdsConfig',
     'cats.apps.CatsConfig',
@@ -134,16 +136,24 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "~/Coursera/Lab/django_project/static"
+MEDIA_URL = '/media/'
+
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static', 'media')
+
+#STATIC_ROOT = "~/Coursera/Lab/django_project/static"
+
+STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static', 'static-only')
+
+STATICFILES_DIRS = (
+    os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static', 'static'),
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static', 'templates'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-'''
-STATICFILES_DIRS = [
-    # ...
-    ("style", "~/django_project/static"),
-]
-'''

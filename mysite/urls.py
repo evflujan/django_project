@@ -30,6 +30,9 @@ urlpatterns = [
     path('autos/', include('autos.urls')),
     path('cats/', include('cats.urls')),
     path('', include('ads.urls')),
+    path('imgs/', include('imgs.urls')),
+    path('pics/', include('pics.urls')),
+    path('albums/', include('albums.urls')),
 ]
 #
 #

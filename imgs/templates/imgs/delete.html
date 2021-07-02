@@ -1,0 +1,15 @@
+{% extends "base_bootstrap.html" %}
+{% block content %}
+<p>delete.html</p>
+<h1>Delete Img</h1>
+
+<p>Are you sure you want to delete the img: {{ img }}?</p>
+<br>
+<img style="float:right; max-width:50%;" src="{% url 'imgs:img_stream' img.id %}"
+    onclick="document.getElementById('overlay').style.display = 'block';">
+<br>
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Yes, delete.">
+</form>
+{% endblock %}

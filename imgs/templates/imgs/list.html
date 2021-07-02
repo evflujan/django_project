@@ -1,0 +1,35 @@
+
+{% extends "base_bootstrap.html" %}
+{% block content %}
+<p>list.html</p>
+<h1>Imgs</h1>
+<p>
+{% if img_list %}
+<ul>
+  {% for img in img_list %}
+    <li>
+        <a href="{% url 'imgs:img_detail'  img.id %}">{{ img.name }}</a>
+        <img src="media/{{ img.picture }}" class="img-responsive" style="width: 50px; float: left; margin-right: 10px;" />
+        {% if img.owner == user %}
+        (<a href="{% url 'imgs:img_update' img.id %}">Edit</a> |
+        <a href="{% url 'imgs:img_delete' img.id %}">Delete</a>)
+        {% endif %}
+
+    </li>
+    <br><br>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>There are no images in the database.</p>
+{% endif %}
+</p>
+<br><br>
+<p>
+<a href="{% url 'imgs:img_create' %}">Add an img</a> |
+{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}?next={% url 'imgs:all' %}">Logout</a>
+{% else %}
+    <a href="{% url 'login' %}?next={% url 'imgs:all' %}">Login</a>
+{% endif %}
+</p>
+{% endblock %}
